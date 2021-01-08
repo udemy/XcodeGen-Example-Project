@@ -1,33 +1,48 @@
 targetTemplates:
   BaseTarget:
     platform: iOS
+    sources: ["shared"]
   AppTarget:
     templates: [BaseTarget]
     type: application
+    sources: ["app/shared"]
   NotificationTarget:
     templates: [BaseTarget]
     type: app-extension
+    sources: ["notifications/shared"]
   UITestTarget: 
     templates: [BaseTarget]
     type: bundle.ui-testing
   UnitTestTarget: 
     templates: [BaseTarget]
     type: bundle.unit-test
+    sources: ["tests/shared"]
 name: XcodeGen-Example-Project
 options:
   createIntermediateGroups: true
 targets:
   XcodeGen-Example-Project:
     templates: [AppTarget]
+    sources: ["app/Main"]
   NotificationContentExt:
     templates: [NotificationTarget]
+    sources: ["notifications/NotificationContentExt"]
   NotificationService:
     templates: [NotificationTarget]
+    sources: ["notifications/NotificationService"]
   XcodeGen-Example-ProjectTests:
     templates: [UnitTestTarget]
+    sources: ["tests/XcodeGen-Example-ProjectTests"]
   XcodeGen-Example-ProjectUITests:
     templates: [UITestTarget]
+    sources: ["tests/XcodeGen-Example-ProjectUITests"]
   Demo-Example-Project:
     templates: [AppTarget]
+    sources: 
+      - path: "app/Demo"
+        excludes: ["Supporting Files/Demo-Info.plist"]
+      - path: "app/Demo/Supporting Files/Demo-Info.plist"
+        buildPhase: none
   Demo-Example-ProjectTests:
     templates: [UnitTestTarget]
+    sources: ["tests/Demo-Example-ProjectTests"]
