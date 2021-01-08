@@ -1,0 +1,33 @@
+targetTemplates:
+  BaseTarget:
+    platform: iOS
+  AppTarget:
+    templates: [BaseTarget]
+    type: application
+  NotificationTarget:
+    templates: [BaseTarget]
+    type: app-extension
+  UITestTarget: 
+    templates: [BaseTarget]
+    type: bundle.ui-testing
+  UnitTestTarget: 
+    templates: [BaseTarget]
+    type: bundle.unit-test
+name: XcodeGen-Example-Project
+options:
+  createIntermediateGroups: true
+targets:
+  XcodeGen-Example-Project:
+    templates: [AppTarget]
+  NotificationContentExt:
+    templates: [NotificationTarget]
+  NotificationService:
+    templates: [NotificationTarget]
+  XcodeGen-Example-ProjectTests:
+    templates: [UnitTestTarget]
+  XcodeGen-Example-ProjectUITests:
+    templates: [UITestTarget]
+  Demo-Example-Project:
+    templates: [AppTarget]
+  Demo-Example-ProjectTests:
+    templates: [UnitTestTarget]
