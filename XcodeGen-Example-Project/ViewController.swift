@@ -9,7 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label: UILabel! {
+        didSet {
+            label.accessibilityIdentifier = Constants.labelAccessibilityIdentifier
+        }
+    }
 
     var configuration: AppConfiguration
 
@@ -33,6 +37,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.accessibilityIdentifier = Constants.viewAccessibilityIdentifier
 
         label.text = labelText + "\n" + appNameEnv
     }

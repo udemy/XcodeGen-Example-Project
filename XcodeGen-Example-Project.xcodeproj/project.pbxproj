@@ -47,6 +47,9 @@
 		B9E0CB3C25A8D0AB007D0D9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E0CAFF25A8D065007D0D9A /* Assets.xcassets */; };
 		B9E0CB3D25A8D0AB007D0D9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E0CAFC25A8D064007D0D9A /* Main.storyboard */; };
 		B9E0CB7C25A8D25D007D0D9A /* Demo_Example_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E0CB7A25A8D25D007D0D9A /* Demo_Example_ProjectTests.swift */; };
+		B9FE412C25A8FF8D001D6B8F /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE412B25A8FF8D001D6B8F /* NotificationConstants.swift */; };
+		B9FE412D25A8FF8D001D6B8F /* NotificationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9FE412B25A8FF8D001D6B8F /* NotificationConstants.swift */; };
+		B9FE414225A90663001D6B8F /* MockAppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B917ACB125A8E284003C7113 /* MockAppConfiguration.swift */; };
 		E23C53DC58AC454A7C493EA0 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
@@ -147,6 +150,7 @@
 		B9E0CB6D25A8D22C007D0D9A /* Demo-Example-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Demo-Example-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E0CB7A25A8D25D007D0D9A /* Demo_Example_ProjectTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Demo_Example_ProjectTests.swift; sourceTree = "<group>"; };
 		B9E0CB7B25A8D25D007D0D9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9FE412B25A8FF8D001D6B8F /* NotificationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationConstants.swift; sourceTree = "<group>"; };
 		CC5BA52205FE45723A7846B8 /* Pods_XcodeGen_Example_Project_XcodeGen_Example_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XcodeGen_Example_Project_XcodeGen_Example_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B58706B1A1C9B561D1EF3A /* Pods-XcodeGen-Example-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XcodeGen-Example-ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-XcodeGen-Example-ProjectTests/Pods-XcodeGen-Example-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		D95047AEE40B78C5926A8CBC /* Pods_Demo_Example_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo_Example_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +283,7 @@
 		B917AC5525A8E126003C7113 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				B9FE412B25A8FF8D001D6B8F /* NotificationConstants.swift */,
 				B917AC5625A8E12D003C7113 /* Constants.swift */,
 			);
 			name = Constants;
@@ -777,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FE412C25A8FF8D001D6B8F /* NotificationConstants.swift in Sources */,
 				B917AC1525A8DC45003C7113 /* NotificationViewController.swift in Sources */,
 				B917AC5C25A8E12D003C7113 /* Constants.swift in Sources */,
 			);
@@ -786,6 +792,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FE412D25A8FF8D001D6B8F /* NotificationConstants.swift in Sources */,
 				B917AC2E25A8DCBD003C7113 /* NotificationService.swift in Sources */,
 				B917AC5D25A8E12D003C7113 /* Constants.swift in Sources */,
 			);
@@ -840,6 +847,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9FE414225A90663001D6B8F /* MockAppConfiguration.swift in Sources */,
 				B9E0CB7C25A8D25D007D0D9A /* Demo_Example_ProjectTests.swift in Sources */,
 				B917AC5B25A8E12D003C7113 /* Constants.swift in Sources */,
 			);

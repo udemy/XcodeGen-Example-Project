@@ -6,11 +6,14 @@
 //
 
 import Foundation
-@testable import protocol XcodeGen_Example_Project.AppConfiguration
 
-final class MockAppConfiguration: AppConfiguration {
+final class MockAppConfiguration {
 
     var appName: String {
         return "Mock App"
+    }
+
+    var featureIsSupported: Bool {
+        return true
     }
 }

@@ -27,6 +27,9 @@ class XcodeGen_Example_ProjectUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+        XCTAssertNotNil(app.otherElements[Constants.viewAccessibilityIdentifier])
+        XCTAssertEqual(app.staticTexts[Constants.labelAccessibilityIdentifier].label as? String, "This is the Real App NONE")
+
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

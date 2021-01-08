@@ -8,6 +8,8 @@
 import XCTest
 @testable import Demo_Example_Project
 
+extension MockAppConfiguration: AppConfiguration {}
+
 class Demo_Example_ProjectTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -21,6 +23,15 @@ class Demo_Example_ProjectTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        let configuration: MockAppConfiguration = .init()
+        let viewController: ViewController? = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController { (coder) -> ViewController? in
+            return ViewController(coder: coder, configuration: configuration)
+        }
+
+        XCTAssertEqual(viewController?.labelText, "This is the Mock App")
+        XCTAssertEqual(viewController?.appNameEnv, "NONE")
+        XCTAssertTrue(viewController?.configuration.featureIsSupported ?? false)
     }
 
     func testPerformanceExample() throws {

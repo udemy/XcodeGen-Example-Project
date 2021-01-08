@@ -10,4 +10,6 @@ import Foundation
 protocol AppConfiguration {
 
     var appName: String { get }
+
+    var featureIsSupported: Bool { get }
 }

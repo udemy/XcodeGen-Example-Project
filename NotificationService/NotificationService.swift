@@ -22,6 +22,8 @@ class NotificationService: UNNotificationServiceExtension {
             
             contentHandler(bestAttemptContent)
         }
+
+        print(NotificationConstants.notificationConstant)
     }
     
     override func serviceExtensionTimeWillExpire() {

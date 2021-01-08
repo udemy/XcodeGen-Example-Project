@@ -8,6 +8,8 @@
 import XCTest
 @testable import XcodeGen_Example_Project
 
+extension MockAppConfiguration: AppConfiguration {}
+
 class XcodeGen_Example_ProjectTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -29,6 +31,7 @@ class XcodeGen_Example_ProjectTests: XCTestCase {
 
         XCTAssertEqual(viewController?.labelText, "This is the Mock App")
         XCTAssertEqual(viewController?.appNameEnv, "NONE")
+        XCTAssertTrue(viewController?.configuration.featureIsSupported ?? false)
     }
 
     func testPerformanceExample() throws {

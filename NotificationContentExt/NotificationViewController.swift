@@ -16,6 +16,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any required interface initialization here.
+
+        print(NotificationConstants.notificationConstant)
     }
     
     func didReceive(_ notification: UNNotification) {

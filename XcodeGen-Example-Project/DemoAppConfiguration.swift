@@ -12,5 +12,9 @@ final class ConcreteAppConfiguration: AppConfiguration {
     var appName: String {
         return "Demo App"
     }
+
+    var featureIsSupported: Bool {
+        return false
+    }
 }
 
