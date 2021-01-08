@@ -19,23 +19,46 @@ targetTemplates:
     sources: ["tests/shared"]
 name: XcodeGen-Example-Project
 options:
+  bundleIdPrefix: io.joecolicch
   createIntermediateGroups: true
 targets:
   XcodeGen-Example-Project:
     templates: [AppTarget]
     sources: ["app/Main"]
+    dependencies:
+      - target: NotificationService
+      - target: NotificationContentExt
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/app/Main/Supporting Files/Info.plist"
   NotificationContentExt:
     templates: [NotificationTarget]
     sources: ["notifications/NotificationContentExt"]
+    dependencies:
+      - sdk: UserNotifications.framework
+      - sdk: UserNotificationsUI.framework
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/notifications/NotificationContentExt/Info.plist"
+      PRODUCT_BUNDLE_IDENTIFIER: "io.joecolicch.XcodeGen-Example-Project.NotificationContentExt"
   NotificationService:
     templates: [NotificationTarget]
     sources: ["notifications/NotificationService"]
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/notifications/NotificationService/Info.plist"
+      PRODUCT_BUNDLE_IDENTIFIER: "io.joecolicch.XcodeGen-Example-Project.NotificationService"
   XcodeGen-Example-ProjectTests:
     templates: [UnitTestTarget]
     sources: ["tests/XcodeGen-Example-ProjectTests"]
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/tests/XcodeGen-Example-ProjectTests/Info.plist"
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/XcodeGen-Example-Project.app/XcodeGen-Example-Project"
+    dependencies:
+      - target: XcodeGen-Example-Project
   XcodeGen-Example-ProjectUITests:
     templates: [UITestTarget]
     sources: ["tests/XcodeGen-Example-ProjectUITests"]
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/tests/XcodeGen-Example-ProjectUITests/Info.plist"
+      TEST_TARGET_NAME: "XcodeGen-Example-Project"
   Demo-Example-Project:
     templates: [AppTarget]
     sources: 
@@ -43,6 +66,13 @@ targets:
         excludes: ["Supporting Files/Demo-Info.plist"]
       - path: "app/Demo/Supporting Files/Demo-Info.plist"
         buildPhase: none
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/app/Demo/Supporting Files/Demo-Info.plist"
   Demo-Example-ProjectTests:
     templates: [UnitTestTarget]
     sources: ["tests/Demo-Example-ProjectTests"]
+    settings:
+      INFOPLIST_FILE: "$(SRCROOT)/tests/Demo-Example-ProjectTests/Info.plist"
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Demo-Example-Project.app/Demo-Example-Project"
+    dependencies:
+      - target: Demo-Example-Project
