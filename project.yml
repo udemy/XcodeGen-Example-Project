@@ -13,10 +13,12 @@ targetTemplates:
   UITestTarget: 
     templates: [BaseTarget]
     type: bundle.ui-testing
+    scheme: nil
   UnitTestTarget: 
     templates: [BaseTarget]
     type: bundle.unit-test
     sources: ["tests/shared"]
+    scheme: nil
 name: XcodeGen-Example-Project
 options:
   bundleIdPrefix: io.joecolicch
@@ -76,3 +78,40 @@ targets:
       TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Demo-Example-Project.app/Demo-Example-Project"
     dependencies:
       - target: Demo-Example-Project
+schemes:
+  XcodeGen-Example-Project:
+    build:
+      targets:
+        XcodeGen-Example-Project: all
+        XcodeGen-Example-ProjectTests: [test]
+        XcodeGen-Example-ProjectUITests: [test]
+    run:
+      environmentVariables:
+        - variable: "APP_NAME"
+          value: "REAL"
+          isEnabled: true
+    test:
+      environmentVariables:
+        - variable: "APP_NAME"
+          value: "REAL"
+          isEnabled: false
+      targets: 
+        - XcodeGen-Example-ProjectTests
+        - XcodeGen-Example-ProjectUITests
+  Demo-Example-Project:
+    build:
+      targets:
+        Demo-Example-Project: all
+        Demo-Example-ProjectTests: [test]
+    run:
+      environmentVariables:
+        - variable: "APP_NAME"
+          value: "DEMO"
+          isEnabled: true
+    test:
+      environmentVariables:
+        - variable: "APP_NAME"
+          value: "DEMO"
+          isEnabled: false
+      targets: 
+        - Demo-Example-ProjectTests
