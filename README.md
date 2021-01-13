@@ -66,7 +66,7 @@ Occasionally, I'll discover that I need XcodeGen to behave in a way it doesn't p
 XcodeGen can be installed via Mint or Homebrew, or compiled from source and installed locally. More details can be found on the XcodeGen repo on GitHub, here: https://github.com/yonaskolb/XcodeGen
 
 ##### 1. Move files on the file system
-Make sure the source files on the file system are organized into folders mirroring the groups of the Xcode project. You’ll also need to create a barebones `project.yml` file. After this step, running `xcodegen` should generate a project including all of the same sources in the Project Navigator as the original project
+Make sure the source files on the file system are organized into folders mirroring the groups of the Xcode project. You’ll also need to create a barebones `project.yml` file. After this step, running `xcodegen` should generate a project including all of the same sources in the Project Navigator as the original project. To see an example of this, you can reference a sample repo found [here](https://github.com/udemy/XcodeGen-Example-Project)
 
 ##### 2. Arrange folders according to target inclusion
 Try to organize source files according to the targets those sources belong to, optionally using `shared` folders. For each target declared in the yaml, add these source folders to the target's sources. After this step, we should be able to generate the same targets with the same compiled and copied sources
